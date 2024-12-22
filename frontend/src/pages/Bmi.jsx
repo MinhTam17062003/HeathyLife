@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import BmiTable from "../assets/Images/BmiTable1.jpg"
+import Footer from "../components/common/Footer";
 
 
 const BmiCalculator = () => {
@@ -75,9 +76,19 @@ const BmiCalculator = () => {
           borderRadius: "8px",
           boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
           textAlign: "left",
-          backgroundColor: "#fff"
+          backgroundColor: "#f0fff0"
         }}
       >
+        <Box 
+        sx={{
+          display: "block",
+          padding: "0px 20px",
+          width:"940px",
+          margin: "0 auto",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+        >
         <Typography variant="h6" fontWeight="bold" gutterBottom color="primary">
           BMI LÀ GÌ?
         </Typography>
@@ -104,6 +115,8 @@ const BmiCalculator = () => {
           BMI = 70 / (1,75)² = 22,86
         </Typography>
 
+        </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -118,6 +131,7 @@ const BmiCalculator = () => {
             sx={{
               maxWidth: "600px",
               width: "100%",
+              marginBottom: "40px",
               padding: "20px",
               backgroundColor: "#fff",
               borderRadius: "10px",
@@ -179,7 +193,15 @@ const BmiCalculator = () => {
             )}
           </Box>  
         </Box>
-        <Box sx={{ marginTop: "50px" }}>
+        <Box 
+          sx={{ marginTop: "50px",
+            display: "block",
+            padding: "0px 20px",
+            width:"940px",
+            margin: "0 auto",
+            alignItems: "center",
+            marginBottom: "50px",
+           }}>
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           CHẨN ĐOÁN CÁC TÌNH TRẠNG CÂN NẶNG QUA BMI
         </Typography>
@@ -203,7 +225,7 @@ const BmiCalculator = () => {
             <li>Quét DEXA và phép đo thể tích dịch chuyển không khí (ADP) — những phương pháp này ít được sử dụng hơn.</li>
           </ul>
         </Typography>
-        <Typography variant="h6" fontWeight="bold" gutterBottom>
+        <Typography margin={"20px 0 0 0"} variant="h6" fontWeight="bold" gutterBottom>
           LỢI ÍCH CỦA VIỆC CHỈ SỐ BMI KHỎE MẠNH
         </Typography>
         <Typography>
@@ -218,6 +240,7 @@ const BmiCalculator = () => {
         </Typography>
       </Box>
       </Box>
+      <Footer />
 
       <Dialog
         open={openDialog}
@@ -259,7 +282,9 @@ const BmiCalculator = () => {
           </Button>
         </DialogActions>
       </Dialog>
+
     </Box>
+   
   );
 };
 
