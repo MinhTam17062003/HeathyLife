@@ -124,7 +124,7 @@ function Catalog() {
 
             {/* Section 2 */}
             <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-                <div className="section_heading">
+                <div className="section_heading mb-5">
                     Những khóa học nổi bật {catalogPageData?.differentCategory?.name}
                 </div>
                 <div>

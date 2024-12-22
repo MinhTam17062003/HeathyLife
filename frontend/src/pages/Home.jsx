@@ -109,7 +109,7 @@ const Home = () => {
                         initial='hidden'
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.1 }}
-                        className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-400'
+                        className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-1000'
                     >
                         Tham gia khóa học Yoga trực tuyến để cải thiện sức khỏe, giảm căng thẳng, 
                         và tìm lại sự cân bằng trong cuộc sống, với các bài học dễ dàng theo dõi
@@ -197,7 +197,7 @@ const Home = () => {
 
                     {/* course slider */}
                     <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
-                        <h2 className='text-black mb-6 text-2xl '>
+                        <h2 className='text-black mb-6 text-2xl mt-8'>
                             Các khóa học được đề xuất cho bạn
                         </h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
@@ -233,7 +233,7 @@ const Home = () => {
                     </div> */}
 
                     <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
-                        <div className='flex flex-col lg:flex-row gap-5 mb-10 mt-[95px]'>
+                        <div className='flex flex-col lg:flex-row gap-5 mb-10 mt-[95px] justify-center' >
                             <div className='text-3xl lg:text-4xl font-semibold w-full lg:w-[45%]'>
                                 Duy trì tập luyện đều đặn  
                                 <HighlightText text={"Nâng cao sức khỏe"} />
@@ -262,7 +262,7 @@ const Home = () => {
                     {/* <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
                         Reviews from other learners <MdOutlineRateReview className='text-yellow-25' />
                     </h1> */}
-                    <ReviewSlider />
+                    {/* <ReviewSlider />  padding quá dài, giao diện không đồng bộbộ */}
                 </div>
                 {/*Footer */}
                 <Footer />
