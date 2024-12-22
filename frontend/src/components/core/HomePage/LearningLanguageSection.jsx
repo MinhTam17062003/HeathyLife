@@ -92,7 +92,8 @@ const HeroSection = () => {
                                 sx={{
                                     backgroundColor: "#90EE90",
                                     color: "#ffffff",
-                                    mt: 2,
+                                    // mt: 2,
+                                    mb: 2,
                                     "&:hover": {
                                         backgroundColor: "#76c776",
                                     },
