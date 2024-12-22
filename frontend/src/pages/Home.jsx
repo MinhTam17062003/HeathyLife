@@ -109,7 +109,7 @@ const Home = () => {
                         initial='hidden'
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.1 }}
-                        className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-1000'
+                        className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-[#000000]'
                     >
                         Tham gia khóa học Yoga trực tuyến để cải thiện sức khỏe, giảm căng thẳng, 
                         và tìm lại sự cân bằng trong cuộc sống, với các bài học dễ dàng theo dõi

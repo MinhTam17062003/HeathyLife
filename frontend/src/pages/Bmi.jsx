@@ -240,8 +240,9 @@ const BmiCalculator = () => {
         </Typography>
       </Box>
       </Box>
-      <Footer />
 
+      <Footer />
+              
       <Dialog
         open={openDialog}
         onClose={handleDialogClose}
