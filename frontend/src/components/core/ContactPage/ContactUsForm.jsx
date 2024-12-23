@@ -81,7 +81,7 @@ const ContactUsForm = () => {
         <input
           type="email"
           id="email"
-          placeholder="Enter email address"
+          placeholder="Nhập địa chỉ email của bạn"
           className="form-style focus:ring-2 focus:ring-teal-500 placeholder-gray-400"
           {...register("email", { required: "Vui lòng nhập email." })}
         />

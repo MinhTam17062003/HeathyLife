@@ -142,14 +142,14 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                       {course.status === COURSE_STATUS.DRAFT ? (
                         <p className="mt-2 flex w-fit flex-row items-center gap-2 rounded-full bg-richblack-700 px-2 py-[2px] text-[12px] font-medium text-pink-100">
                           <HiClock size={14} />
-                          Drafted
+                          Soạn thảo
                         </p>)
                         :
                         (<div className="mt-2 flex w-fit flex-row items-center gap-2 rounded-full bg-richblack-700 px-2 py-[2px] text-[12px] font-medium text-yellow-100">
                           <p className="flex h-3 w-3 items-center justify-center rounded-full bg-yellow-100 text-richblack-700">
                             <FaCheck size={8} />
                           </p>
-                          Published
+                          Đã Đăng
                         </div>
                         )}
                     </div>

@@ -143,7 +143,7 @@ function SignupForm() {
             name="email"
             value={email}
             onChange={handleOnChange}
-            placeholder="Enter email address"
+            placeholder="Nhập địa chỉ email của bạn"
             style={{
               boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
             }}

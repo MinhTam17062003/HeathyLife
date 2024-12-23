@@ -39,7 +39,7 @@ export default function MyProfile() {
         </div>
 
         <IconBtn
-          text="Edit"
+          text="Chỉnh sửa"
           onclick={() => {
             navigate("/dashboard/settings")
           }}
@@ -52,7 +52,7 @@ export default function MyProfile() {
         <div className="flex w-full items-center justify-between">
           <p className="text-lg font-semibold text-richblack-5">Thông tin thêm về bản thân</p>
           <IconBtn
-            text="Edit"
+            text="Chỉnh sửa"
             onclick={() => {
               navigate("/dashboard/settings")
             }}
@@ -77,7 +77,7 @@ export default function MyProfile() {
             Thông tin người dùng
           </p>
           <IconBtn
-            text="Edit"
+            text="Chỉnh sửa"
             onclick={() => {
               navigate("/dashboard/settings")
             }}

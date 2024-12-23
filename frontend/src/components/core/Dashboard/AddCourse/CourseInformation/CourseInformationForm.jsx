@@ -267,7 +267,7 @@ export default function CourseInformationForm() {
         </label>
         <textarea
           id="courseBenefits"
-          placeholder="Enter benefits of the course"
+          placeholder="Nhập vào lợi ích khóa học"
           {...register("courseBenefits", { required: true })}
           className="form-style resize-x-none min-h-[130px] w-full"
         />
@@ -301,7 +301,7 @@ export default function CourseInformationForm() {
         )}
         <IconBtn
           disabled={loading}
-          text={!editCourse ? "Next" : "Save Changes"}
+          text={!editCourse ? "Bước tiếp" : "Lưu và thay đổi"}
         >
           <MdNavigateNext />
         </IconBtn>
