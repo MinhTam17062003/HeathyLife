@@ -4,22 +4,18 @@ import { Link } from "react-router-dom";
 import { ImGithub, ImLinkedin2 } from "react-icons/im";
 
 // Images
-// import StudyNotionLogo from "../../assets/Logo/Logo-Full-Light.png";
+import StudyNotionLogo from "../../assets/Logo/Logo-Full-Light.png";
 
-// footer data
-// const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
-// const Resources = [
-//   "Articles",
-//   "Blog",
-//   "Chart Sheet",
-//   "Code challenges",
-//   "Docs",
-//   "Projects",
-//   "Videos",
-//   "Workspaces",
-// ];
-// const Plans = ["Paid memberships", "For students", "Business solutions"];
-// const Community = ["Forums", "Chapters", "Events"];
+
+const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
+const Resources = [
+  "Khóa học Yoga cho người mới bắt đầu",
+  "Khóa học dành cho người có kinh nghiệm",
+  "Khóa học cho mẹ bầu",
+  
+];
+const Plans = ["Minh Tâm", "Tâm Tâm", ""];
+const Community = ["Giáo viên", "Cộng đồng hỗ trợ học yoga", "Sự kiện"];
 
 const Footer = () => {
   return (
@@ -58,10 +54,10 @@ const Footer = () => {
             </div>
 
             <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-              <h1 className="text-richblack-50 font-semibold text-[16px]">Resources</h1>
+              <h1 className="text-richblack-50 font-semibold text-[16px]">Khóa học Yoga</h1>
 
               <div className="flex flex-col gap-2 mt-2">
-                {/* {Resources.map((ele, index) => {
+                {Resources.map((ele, index) => {
                   return (
                     <div
                       key={index}
@@ -72,11 +68,11 @@ const Footer = () => {
                       </Link>
                     </div>
                   );
-                })} */}
+                })}
               </div>
 
               <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-                Support
+                Hỗ trợ
               </h1>
               <div className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200 mt-2">
                 <Link to={"/help-center"}>Hỗ trợ</Link>
@@ -85,11 +81,11 @@ const Footer = () => {
 
             <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
               <h1 className="text-richblack-50 font-semibold text-[16px]">
-                Plans
+                Thành viên
               </h1>
 
               <div className="flex flex-col gap-2 mt-2">
-                {/* {Plans.map((ele, index) => {
+                {Plans.map((ele, index) => {
                   return (
                     <div
                       key={index}
@@ -100,14 +96,14 @@ const Footer = () => {
                       </Link>
                     </div>
                   );
-                })} */}
+                })}
               </div>
               <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-                Community
+                Cộng đồng
               </h1>
 
               <div className="flex flex-col gap-2 mt-2">
-                {/* {Community.map((ele, index) => {
+                {Community.map((ele, index) => {
                   return (
                     <div
                       key={index}
@@ -118,7 +114,7 @@ const Footer = () => {
                       </Link>
                     </div>
                   );
-                })} */}
+                })}
               </div>
             </div>
           </div>
@@ -126,7 +122,7 @@ const Footer = () => {
 
           {/* Section 2 */}
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
-            {/* {FooterLink2.map((ele, i) => {
+            {FooterLink2.map((ele, i) => {
               return (
                 <div key={i} className="w-[35%] lg:w-[30%] mb-7 lg:pl-0">
                   <h1 className="text-richblack-50 font-semibold text-[16px]">
@@ -146,7 +142,7 @@ const Footer = () => {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

@@ -84,10 +84,10 @@ export default function Instructor() {
     <div>
       <div className="space-y-2">
         <h1 className="text-2xl font-bold text-richblack-5 text-center sm:text-left">
-          Hii {user?.firstName} 👋
+          Xin chào {user?.firstName} 👋
         </h1>
         <p className="font-medium text-richblack-200 text-center sm:text-left">
-          Let's start something new
+          Hãy bắt đầu một thứ mới
         </p>
       </div>
 
@@ -106,9 +106,9 @@ export default function Instructor() {
                 <InstructorChart courses={instructorData} />
               ) : (
                 <div className="flex-1 rounded-md bg-richblack-800 p-6">
-                  <p className="text-lg font-bold text-richblack-5">Visualize</p>
+                  <p className="text-lg font-bold text-richblack-5">Mô tả</p>
                   <p className="mt-4 text-xl font-medium text-richblack-50">
-                    Not Enough Data To Visualize
+                    Không có thông tin mô tả
                   </p>
                 </div>
               )}
@@ -116,24 +116,24 @@ export default function Instructor() {
               {/* left column */}
               {/* Total Statistics */}
               <div className="flex min-w-[250px] flex-col rounded-md bg-richblack-800 p-6">
-                <p className="text-lg font-bold text-richblack-5">Statistics</p>
+                <p className="text-lg font-bold text-richblack-5">Thống kê</p>
                 <div className="mt-4 space-y-4">
                   <div>
-                    <p className="text-lg text-richblack-200">Total Courses</p>
+                    <p className="text-lg text-richblack-200">Số lượng khóa học</p>
                     <p className="text-3xl font-semibold text-richblack-50">
                       {courses.length}
                     </p>
                   </div>
                   <div>
-                    <p className="text-lg text-richblack-200">Total Students</p>
+                    <p className="text-lg text-richblack-200">Số lượn học viên</p>
                     <p className="text-3xl font-semibold text-richblack-50">
                       {totalStudents}
                     </p>
                   </div>
                   <div>
-                    <p className="text-lg text-richblack-200">Total Income</p>
+                    <p className="text-lg text-richblack-200">Doanh thu</p>
                     <p className="text-3xl font-semibold text-richblack-50">
-                      Rs. {totalAmount}
+                     {totalAmount} .VNĐ
                     </p>
                   </div>
                 </div>
@@ -143,9 +143,9 @@ export default function Instructor() {
             {/* Render 3 courses */}
             <div className="rounded-md bg-richblack-800 p-6">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-bold text-richblack-5">Your Courses</p>
+                <p className="text-lg font-bold text-richblack-5">Khóa học của bạn</p>
                 <Link to="/dashboard/my-courses">
-                  <p className="text-xs font-semibold text-yellow-50 hover:underline">View All</p>
+                  <p className="text-xs font-semibold text-yellow-50 hover:underline">Xem tất cả</p>
                 </Link>
               </div>
 
@@ -164,13 +164,13 @@ export default function Instructor() {
                       </p>
                       <div className="mt-1 flex items-center space-x-2">
                         <p className="text-xs font-medium text-richblack-300">
-                          {course.studentsEnrolled.length} students
+                          {course.studentsEnrolled.length} Học viên
                         </p>
                         <p className="text-xs font-medium text-richblack-300">
                           |
                         </p>
                         <p className="text-xs font-medium text-richblack-300">
-                          Rs. {course.price}
+                           {course.price} .VNĐ
                         </p>
                       </div>
                     </div>
