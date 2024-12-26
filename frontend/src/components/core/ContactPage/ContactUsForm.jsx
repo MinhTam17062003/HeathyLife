@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import CountryCode from "../../../../data/countrycode.json";
 
 const ContactUsForm = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -11,36 +14,68 @@ const ContactUsForm = () => {
     formState: { errors, isSubmitSuccessful },
   } = useForm();
 
+  // Hàm gửi dữ liệu form
   const submitContactForm = async (data) => {
+    console.log("Dữ liệu gửi từ frontend:", data); // Kiểm tra xem dữ liệu có đầy đủ không
     try {
       setLoading(true);
-      // API logic here
-      console.log("Form Data - ", data);
-      setLoading(false);
+      setError("");
+      setSuccess(false);
+  
+      const response = await fetch("http://localhost:5001/api/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Đảm bảo header đúng
+        },
+        body: JSON.stringify(data), // Gửi dữ liệu dạng JSON
+      });
+  
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        throw new Error(`Lỗi từ server: ${errorResponse.error || response.statusText}`);
+      }
+  
+      const result = await response.json();
+      console.log("Form submitted successfully:", result);
+      setSuccess(true);
+      alert("Email đã được gửi thành công!");
+      reset(); // Reset các trường trong form
     } catch (error) {
-      console.error("Error while submitting: ", error.message);
-      setLoading(false);
+      console.error("Thông tin lỗi:", error);
+      setError(error.message);
+      alert(`Lỗi gửi email: ${error.message}`);
+    } finally {
+      setLoading(false); // Tắt trạng thái loading
     }
   };
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset({
-        email: "",
         firstname: "",
         lastname: "",
-        message: "",
+        email: "",
         phoneNo: "",
         countrycode: "",
+        message: "",
       });
     }
   }, [reset, isSubmitSuccessful]);
 
   return (
-    <form
-      className="flex flex-col gap-7"
-      onSubmit={handleSubmit(submitContactForm)}
-    >
+    <form className="flex flex-col gap-7" onSubmit={handleSubmit(submitContactForm)}>
+      {error && (
+        <div className="p-3 text-red-500 bg-red-50 rounded-md">
+          {error}
+        </div>
+      )}
+
+      {success && (
+        <div className="p-3 text-green-500 bg-green-50 rounded-md">
+          Email đã được gửi thành công!
+        </div>
+      )}
+
       {/* First Name and Last Name */}
       <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-col gap-2 lg:w-[48%]">
@@ -81,7 +116,7 @@ const ContactUsForm = () => {
         <input
           type="email"
           id="email"
-          placeholder="Nhập địa chỉ email của bạn"
+          placeholder="Nhập địa chỉ email"
           className="form-style focus:ring-2 focus:ring-teal-500 placeholder-gray-400"
           {...register("email", { required: "Vui lòng nhập email." })}
         />
