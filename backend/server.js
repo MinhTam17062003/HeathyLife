@@ -16,6 +16,15 @@ const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
 const paymentRoutes = require('./routes/payments');
 const courseRoutes = require('./routes/course');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+
+
+
+// Sử dụng body-parser để phân tích JSON request
+app.use(bodyParser.json());
+
+// Tạo transporter với thông tin tài khoản email của bạn
 
 
 // middleware 

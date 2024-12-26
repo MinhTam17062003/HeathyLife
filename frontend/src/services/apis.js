@@ -60,6 +60,7 @@ export const catalogData = {
 // CONTACT-US API
 export const contactusEndpoint = {
   CONTACT_US_API: BASE_URL + "/reach/contact",
+  SEND_EMAIL_API: BASE_URL + "/send-email",
 }
 
 // SETTINGS PAGE API
@@ -69,3 +70,5 @@ export const settingsEndpoints = {
   CHANGE_PASSWORD_API: BASE_URL + "/auth/changepassword",
   DELETE_PROFILE_API: BASE_URL + "/profile/deleteProfile",
 }
+// CONTACT-US API
+

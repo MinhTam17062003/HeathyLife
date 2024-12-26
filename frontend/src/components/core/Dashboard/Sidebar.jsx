@@ -86,7 +86,7 @@ export default function Sidebar() {
 
           <div className="flex flex-col">
             <SidebarLink
-              link={{ name: "Cài đặt", path: "/dashboard/settings" }}
+              link={{ name: "Settings", path: "/dashboard/settings" }}
               iconName={"VscSettingsGear"}
               setOpenSideMen={setOpenSideMenu}
             />
@@ -94,10 +94,10 @@ export default function Sidebar() {
             <button
               onClick={() =>
                 setConfirmationModal({
-                  text1: "Bạn có chắc muốn đăng xuất ?",
-                  text2: "Bạn sẽ thoát khỏi tài khoản này.",
-                  btn1Text: "Đăng xuất",
-                  btn2Text: "Hủy",
+                  text1: "Are you sure ?",
+                  text2: "You will be logged out of your account.",
+                  btn1Text: "Logout",
+                  btn2Text: "Cancel",
                   btn1Handler: () => dispatch(logout(navigate)),
                   btn2Handler: () => setConfirmationModal(null),
                 })
@@ -106,7 +106,7 @@ export default function Sidebar() {
             >
               <div className="flex items-center gap-x-2 px-8 py-2 text-sm font-medium text-richblack-300 hover:bg-richblack-700 relative">
                 <VscSignOut className="text-lg" />
-                <span>Đăng xuất</span>
+                <span>Logout</span>
               </div>
             </button>
 

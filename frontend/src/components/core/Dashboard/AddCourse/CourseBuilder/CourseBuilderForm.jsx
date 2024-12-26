@@ -66,11 +66,11 @@ export default function CourseBuilderForm() {
   // go To Next
   const goToNext = () => {
     if (course.courseContent.length === 0) {
-      toast.error("Vui lòng thêm ít nhất một phần")
+      toast.error("Please add atleast one section")
       return;
     }
     if (course.courseContent.some((section) => section.subSection.length === 0)) {
-      toast.error("Vui lòng thêm ít nhất một bài giảng vào mỗi phần")
+      toast.error("Please add atleast one lecture in each section")
       return;
     }
 
@@ -86,24 +86,24 @@ export default function CourseBuilderForm() {
 
   return (
     <div className="space-y-8 rounded-2xl border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">Xây dựng khóa học</p>
+      <p className="text-2xl font-semibold text-richblack-5">Course Builder</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Section Name */}
         <div className="flex flex-col space-y-2">
           <label className="text-sm text-richblack-5" htmlFor="sectionName">
-            Tên bài học <sup className="text-pink-200">*</sup>
+            Section Name <sup className="text-pink-200">*</sup>
           </label>
           <input
             id="sectionName"
             disabled={loading}
-            placeholder="Thêm bài học"
+            placeholder="Add a section to build your course"
             {...register("sectionName", { required: true })}
             className="form-style w-full"
           />
           {errors.sectionName && (
             <span className="ml-2 text-xs tracking-wide text-pink-200">
-              Tên khóa học gợi ý
+              Section name is required
             </span>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function CourseBuilderForm() {
           <IconBtn
             type="submit"
             disabled={loading}
-            text={editSectionName ? "Chỉnh bài học" : "Tạo bài học"}
+            text={editSectionName ? "Edit Section Name" : "Create Section"}
             outline={true}
           >
             <IoAddCircleOutline size={20} className="text-yellow-50" />
@@ -125,7 +125,7 @@ export default function CourseBuilderForm() {
               onClick={cancelEdit}
               className="text-sm text-richblack-300 underline"
             >
-              Thoát chỉnh sửa
+              Cancel Edit
             </button>
           )}
         </div>
@@ -142,7 +142,7 @@ export default function CourseBuilderForm() {
           onClick={goBack}
           className={`rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
         >
-          Trở về
+          Back
         </button>
 
         {/* Next button */}
