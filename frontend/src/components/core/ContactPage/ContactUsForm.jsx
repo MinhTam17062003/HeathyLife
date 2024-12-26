@@ -14,14 +14,20 @@ const ContactUsForm = () => {
   const submitContactForm = async (data) => {
     try {
       setLoading(true);
-      // API logic here
-      console.log("Form Data - ", data);
-      setLoading(false);
+      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Failed to send contact form");
+      console.log("Form submitted successfully!");
     } catch (error) {
-      console.error("Error while submitting: ", error.message);
+      console.error("Error: ", error.message);
+    } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -81,7 +87,7 @@ const ContactUsForm = () => {
         <input
           type="email"
           id="email"
-          placeholder="Nhập địa chỉ email của bạn"
+          placeholder="Enter email address"
           className="form-style focus:ring-2 focus:ring-teal-500 placeholder-gray-400"
           {...register("email", { required: "Vui lòng nhập email." })}
         />

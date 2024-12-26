@@ -78,11 +78,11 @@ function SignupForm() {
       tabName: "Học viên",
       type: ACCOUNT_TYPE.STUDENT,
     },
-    {
-      id: 2,
-      tabName: "Giáo viên",
-      type: ACCOUNT_TYPE.INSTRUCTOR,
-    },
+    // {
+    //   id: 2,
+    //   tabName: "Giáo viên",
+    //   type: ACCOUNT_TYPE.INSTRUCTOR,
+    // },
   ];
 
   return (
@@ -143,7 +143,7 @@ function SignupForm() {
             name="email"
             value={email}
             onChange={handleOnChange}
-            placeholder="Nhập địa chỉ email của bạn"
+            placeholder="Enter email address"
             style={{
               boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
             }}

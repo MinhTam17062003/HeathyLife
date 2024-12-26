@@ -79,7 +79,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
                 }}
                 className="mt-3 text-richblack-400 underline"
               >
-                Hủy
+                Cancel
               </button>
             )}
           </div>
@@ -93,13 +93,13 @@ export default function Upload({ name, label, register, setValue, errors, video 
               <FiUploadCloud className="text-2xl text-yellow-50" />
             </div>
             <p className="mt-2 max-w-[200px] text-center text-sm text-richblack-200">
-              Kéo thả  {!video ? "ảnh" : "video"}, hoặc bấm{" "}
-              <span className="font-semibold text-yellow-50">Duyệt qua </span>
+              Drag and drop an {!video ? "image" : "video"}, or click to{" "}
+              <span className="font-semibold text-yellow-50">Browse</span> a
               file
             </p>
             <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-richblack-200">
-              <li>tỷ lệ khung hình 16:9</li>
-              <li>Kích thước đề xuất 1024x576</li>
+              <li>Aspect ratio 16:9</li>
+              <li>Recommended size 1024x576</li>
             </ul>
           </div>
         )}
@@ -107,7 +107,7 @@ export default function Upload({ name, label, register, setValue, errors, video 
 
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-200">
-          {label} là bắt buộc
+          {label} is required
         </span>
       )}
     </div>

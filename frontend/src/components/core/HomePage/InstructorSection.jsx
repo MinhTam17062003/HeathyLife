@@ -11,7 +11,7 @@ import { scaleUp } from './../../common/motionFrameVarients';
 const InstructorSection = () => {
   return (
     <div>
-      <div className='flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 items-center px-[28px]'>
+      <div className='flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 items-center'>
 
         <motion.div
           variants={scaleUp}
@@ -32,14 +32,12 @@ const InstructorSection = () => {
             <HighlightText text={"Healthy Life"} />
           </div>
 
-          <div className='flex-1 flex justify-center flex-col'>
-            <p className='font-medium text-[16px] w-[80%] text-richblack-300 mb-12'>
-              Healthy Life là nền tảng trực tuyến hỗ trợ người dùng xây dựng lối sống lành mạnh thông qua các nội dung và công cụ tiện ích. Trang web tập trung vào các lĩnh vực chính như dinh dưỡng, tập luyện thể dục, sức khỏe tinh thần, và theo dõi sức khỏe cá nhân.
-            </p>
-            <p className='font-medium text-[16px] w-[80%] text-richblack-300 mb-12'>
-              Healthy Life mang đến một giải pháp linh hoạt, giúp yoga trở nên dễ tiếp cận hơn bao giờ hết, đồng thời xây dựng một cộng đồng tích cực, nơi mọi người có thể cùng nhau cải thiện sức khỏe và tìm kiếm cân bằng trong cuộc sống.
-            </p>
-          </div>
+          <p className='font-medium text-[16px] w-[80%] text-richblack-300 mb-12'>
+            Healthy Life là nền tảng trực tuyến hỗ trợ người dùng xây dựng lối sống lành mạnh thông qua các nội dung và công cụ tiện ích. Trang web tập trung vào các lĩnh vực chính như dinh dưỡng, tập luyện thể dục, sức khỏe tinh thần, và theo dõi sức khỏe cá nhân.
+          </p>
+          <p className='font-medium text-[16px] w-[80%] text-richblack-300 mb-12'>
+            Healthy Life mang đến một giải pháp linh hoạt, giúp yoga trở nên dễ tiếp cận hơn bao giờ hết, đồng thời xây dựng một cộng đồng tích cực, nơi mọi người có thể cùng nhau cải thiện sức khỏe và tìm kiếm cân bằng trong cuộc sống.
+          </p>
 
           <div className='w-fit'>
             <CTAButton active={true} linkto={"/signup"}>

@@ -6,22 +6,22 @@ import * as Icon2 from "react-icons/io5"
 const contactDetails = [
   {
     icon: "HiChatBubbleLeftRight",
-    heading: "Trò chuyện với chúng tôi",
-    description: "Đội ngũ thân thiện sẵn sàng giúp đỡ bạn ",
+    heading: "Cộng đồng ",
+    description: "Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ .",
     details: "mtam2003it@gmail.com",
   },
   {
     icon: "BiWorld",
-    heading: "Đến gặp chúng tôi tại địa chỉ",
-    description: "300A Nguyễn Tất Thành Q.4 TP:HCM",
+    heading: "Địa chỉ ",
+    description: "Nếu cần sự hỗ trợ trực tiếp hãy tìm chúng tại Happy home 2.",
     details:
-      "Đại học Nguyễn Tất Thành",
+      "544/42 khu phố 4, phường An Phú Đông, quận 12",
   },
   {
     icon: "IoCall",
-    heading: "Gọi cho tôi",
-    description: "Từ thứ 2 đến thứ 6. 9am to 6pm",
-    details: "0352404207"
+    heading: "Call us",
+    description: "Thư 2 đến Thứ 7, từ 5h.am đến 9h.pm",
+    details: "+52404207",
   },
 ]
 
