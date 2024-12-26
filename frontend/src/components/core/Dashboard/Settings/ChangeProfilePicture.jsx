@@ -64,7 +64,7 @@ export default function ChangeProfilePicture() {
 
   return (
     <>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-3 sm:px-12 text-richblack-5">
+      <div className="flex items-center justify-between rounded-md bg-green-100 p-8 px-3 sm:px-12 text-richblack-5">
         <div className="flex items-center gap-x-4">
           <Img
             src={previewSource || user?.image}
@@ -73,7 +73,7 @@ export default function ChangeProfilePicture() {
           />
 
           <div className="space-y-2">
-            <p className="font-medium">Thay đổi ảnh đại diện</p>
+            <p className="font-medium text-black">Thay đổi ảnh đại diện</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="file"

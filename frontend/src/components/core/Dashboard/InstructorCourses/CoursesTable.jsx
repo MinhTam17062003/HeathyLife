@@ -67,7 +67,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
 
   return (
     <>
-      <Table className="rounded-2xl border border-richblack-800 ">
+      <Table className="rounded-2xl bg-[#FFFFFF]">
         {/* heading */}
         <Thead>
           <Tr className="flex gap-x-10 rounded-t-3xl border-b border-b-richblack-800 px-6 py-2">

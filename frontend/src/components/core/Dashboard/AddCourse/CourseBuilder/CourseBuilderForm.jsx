@@ -85,13 +85,13 @@ export default function CourseBuilderForm() {
   }
 
   return (
-    <div className="space-y-8 rounded-2xl border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">Xây dựng khóa học</p>
+    <div className="space-y-8 rounded-2xl border-[1px] border-richblack-700 bg-[#FFFFFF] p-6">
+      <p className="text-2xl font-semibold text-black">Xây dựng khóa học</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Section Name */}
         <div className="flex flex-col space-y-2">
-          <label className="text-sm text-richblack-5" htmlFor="sectionName">
+          <label className="text-sm text-black" htmlFor="sectionName">
             Tên bài học <sup className="text-pink-200">*</sup>
           </label>
           <input
@@ -116,7 +116,7 @@ export default function CourseBuilderForm() {
             text={editSectionName ? "Edit Section Name" : "Tạo bài học"}
             outline={true}
           >
-            <IoAddCircleOutline size={20} className="text-yellow-50" />
+            <IoAddCircleOutline size={20} className="text-green-300" />
           </IconBtn>
           {/* if editSectionName mode is on */}
           {editSectionName && (

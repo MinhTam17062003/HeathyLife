@@ -185,7 +185,7 @@ function Catalog() {
 
             {/* Section 3 - Most Selling Courses */}
             <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-                <div className="section_heading">Bán chạy</div>
+                <div className="section_heading py-2">Bán chạy</div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {catalogPageData?.mostSellingCourses?.map((course, i) => (
                         <Course_Card course={course} key={i} Height={"h-[300px]"} />

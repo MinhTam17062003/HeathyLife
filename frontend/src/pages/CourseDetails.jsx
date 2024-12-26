@@ -177,7 +177,7 @@ function CourseDetails() {
 
   return (
     <>
-      <div className={`relative w-full bg-richblack-800`}>
+      <div className={`relative w-full bg-[#FFFFFF]`}>
         {/* Hero Section */}
         <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
           <div className="mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-cente py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
@@ -198,8 +198,8 @@ function CourseDetails() {
             </div>
 
             {/* Course data */}
-            <div className={`mb-5 flex flex-col justify-center gap-4 py-5 text-lg text-richblack-5`}>
-              <p className="text-4xl font-bold text-richblack-5 sm:text-[42px]">{courseName}</p>
+            <div className={`mb-5 flex flex-col justify-center gap-4 py-5 text-lg text-black`}>
+              <p className="text-4xl font-bold text-black sm:text-[42px]">{courseName}</p>
               <p className='text-richblack-200'>{courseDescription}</p>
               <div className="text-md flex flex-wrap items-center gap-2">
                 <span className="text-yellow-25">{avgReviewCount}</span>
@@ -207,21 +207,21 @@ function CourseDetails() {
                 <span>{`(${ratingAndReviews.length} reviews)`}</span>
                 <span>{`${studentsEnrolled.length} students enrolled`}</span>
               </div>
-              <p className="capitalize "> Created By <span className="font-semibold underline">{instructor.firstName} {instructor.lastName}</span></p>
+              <p className="capitalize "> Được tạo bởi <span className="font-semibold underline">{instructor.firstName} {instructor.lastName}</span></p>
               <div className="flex flex-wrap gap-5 text-lg">
                 <p className="flex items-center gap-2">
                   {" "}
-                  <BiInfoCircle /> Created at {formatDate(createdAt)}
+                  <BiInfoCircle /> Tạo vào ngày {formatDate(createdAt)}
                 </p>
-                <p className="flex items-center gap-2">{" "} <HiOutlineGlobeAlt /> English</p>
+                <p className="flex items-center gap-2">{" "} <HiOutlineGlobeAlt /> Vietnames</p>
               </div>
             </div>
 
             {/* will appear only for small size */}
             <div className="flex w-full flex-col gap-4 border-y border-y-richblack-500 py-4 lg:hidden">
-              <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">VNĐ. {price}</p>
-              <button className="yellowButton" onClick={handleBuyCourse}>Buy Now</button>
-              <button onClick={handleAddToCart} className="blackButton">Add to Cart</button>
+              <p className="space-x-3 pb-4 text-3xl font-semibold text-black">VNĐ. {price}</p>
+              <button className="yellowButton" onClick={handleBuyCourse}>Mua bây giờ</button>
+              <button onClick={handleAddToCart} className="blackButton">Thêm vào giỏ hàng</button>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ function CourseDetails() {
         </div>
       </div>
 
-      <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
+      <div className="mx-auto box-content px-4 text-start text-black lg:w-[150vw] bg-[#FFFFFF] px-[310px]">
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
           <div className="my-8 border border-richblack-600 p-8">
@@ -255,11 +255,11 @@ function CourseDetails() {
 
           {/* Tags */}
           <div className="flex flex-col lg:flex-row gap-4">
-            <p className="text-xl font-bold">Tags</p>
+            <p className="text-xl font-bold">Thẻ</p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {
                 tag && tag.map((item, ind) => (
-                  <p key={ind} className="bg-yellow-50 p-[2px] text-black rounded-full text-center font-semibold" >
+                  <p key={ind} className="bg-green-300 p-[2px] text-black rounded-full text-center font-semibold" >
                     {item}
                   </p>
                 ))
@@ -274,18 +274,18 @@ function CourseDetails() {
               <div className="flex flex-wrap justify-between gap-2">
                 <div className="flex gap-2">
                   <span>
-                    {courseContent.length} {`section(s)`}
+                    {courseContent.length} {`Các phần bài học`}
                   </span>
                   <span>
-                    {totalNoOfLectures} {`lecture(s)`}
+                    {totalNoOfLectures} {`bài giảng`}
                   </span>
-                  <span>{response.data?.totalDuration} Total Time</span>
+                  <span>{response.data?.totalDuration} Tổng thời gian</span>
                 </div>
                 <button
-                  className="text-yellow-25"
+                  className="text-green-300"
                   onClick={() => setIsActive([])}
                 >
-                  Collapse All Sections
+                  Thu gọn tất cả các mục
                 </button>
               </div>
             </div>
@@ -315,7 +315,7 @@ function CourseDetails() {
                   <p className="text-lg capitalize flex items-center gap-2 font-semibold">{`${instructor.firstName} ${instructor.lastName}`}
                     <span><MdOutlineVerified className='w-5 h-5 text-[#00BFFF]' /></span>
                   </p>
-                  <p className="text-richblack-50">{instructor?.additionalDetails?.about}</p>
+                  <p className="text-black0">{instructor?.additionalDetails?.about}</p>
                 </div>
               </div>
             </div>

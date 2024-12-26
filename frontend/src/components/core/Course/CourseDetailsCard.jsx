@@ -69,7 +69,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
           </div>
           <div className="flex flex-col gap-4">
             <button
-              className="yellowButton outline-none"
+              className="greenButton outline-none"
               onClick={
                 user && course?.studentsEnrolled.includes(user?._id)
                   ? () => navigate("/dashboard/enrolled-courses")
@@ -78,7 +78,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
             >
               {user && course?.studentsEnrolled.includes(user?._id)
                 ? "Go To Course"
-                : "Buy Now"}
+                : "Mua ngay"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
               <button onClick={handleAddToCart} className="blackButton outline-none">
@@ -109,10 +109,10 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
 
           <div className="text-center">
             <button
-              className="mx-auto flex items-center gap-2 py-6 text-yellow-100 "
+              className="mx-auto flex items-center gap-2 py-6 text-green-300 "
               onClick={handleShare}
             >
-              <FaShareSquare size={15} /> Share
+              <FaShareSquare size={15} /> Chia sẻ
             </button>
           </div>
         </div>
