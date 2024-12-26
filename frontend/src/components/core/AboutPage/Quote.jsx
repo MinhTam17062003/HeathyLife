@@ -10,11 +10,7 @@ const Quote = () => {
             {" "}
             chuyên môn
         </span>
-        , và cộng đồng để tạo ra một
-        <span>
-            {" "}
-            trải nghiệm yoga độc đáo
-        </span> 
+        , và cộng đồng để tạo ra một trải nghiệm yoga độc đáo
         dành cho bạn.
     </div>
   )

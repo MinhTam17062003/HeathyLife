@@ -2,7 +2,6 @@ import { useState } from "react"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-
 import { login } from "../../../services/operations/authAPI"
 
 function LoginForm() {
@@ -35,7 +34,7 @@ function LoginForm() {
       className="mt-6 flex w-full flex-col gap-y-4"
     >
       <label className="w-full">
-        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-[#333333]">
           Địa chỉ Email <sup className="text-pink-200">*</sup>
         </p>
         <input
@@ -53,7 +52,7 @@ function LoginForm() {
       </label>
 
       <label className="relative">
-        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-[#333333]">
           Mật Khẩu<sup className="text-pink-200">*</sup>
         </p>
         <input

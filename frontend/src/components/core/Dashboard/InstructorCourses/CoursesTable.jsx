@@ -99,7 +99,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
           {!loading && courses?.length === 0 ? (
             <Tr>
               <Td className="py-10 text-center text-2xl font-medium text-richblack-100">
-                No courses found
+                Không tìm thấy khóa học của bạn
               </Td>
             </Tr>
           )

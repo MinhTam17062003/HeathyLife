@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { updateProfile } from "../../../../services/operations/SettingsAPI"
 import IconBtn from "../../../common/IconBtn"
 
-const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
+const genders = ["Nam", "Nữ"]
 
 export default function EditProfile() {
   const { user } = useSelector((state) => state.profile)
@@ -29,46 +29,46 @@ export default function EditProfile() {
         {/* Profile Information */}
         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-6 sm:px-12">
           <h2 className="text-lg font-semibold text-richblack-5">
-            Profile Information
+            Thông tin người dùng
           </h2>
 
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="firstName" className="lable-style">
-                First Name
+                Tên
               </label>
               <input
                 type="text"
                 name="firstName"
                 id="firstName"
-                placeholder="Enter first name"
+                placeholder="Tên"
                 className="form-style"
                 {...register("firstName", { required: true })}
                 defaultValue={user?.firstName}
               />
               {errors.firstName && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your first name.
+                  Vui lòng nhập tên của bạn
                 </span>
               )}
             </div>
 
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="lastName" className="lable-style">
-                Last Name
+                Họ
               </label>
               <input
                 type="text"
                 name="lastName"
                 id="lastName"
-                placeholder="Enter first name"
+                placeholder="Họ"
                 className="form-style"
                 {...register("lastName", { required: true })}
                 defaultValue={user?.lastName}
               />
               {errors.lastName && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your last name.
+                  Vui lòng nhập vào học của bạn
                 </span>
               )}
             </div>
@@ -77,7 +77,7 @@ export default function EditProfile() {
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="dateOfBirth" className="lable-style">
-                Date of Birth
+                Ngày sinh
               </label>
               <input
                 type="date"
@@ -87,7 +87,7 @@ export default function EditProfile() {
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
-                    message: "Please enter your Date of Birth.",
+                    message: "Nhập ngày sinh của bạn",
                   },
                   max: {
                     value: new Date().toISOString().split("T")[0],
@@ -125,7 +125,7 @@ export default function EditProfile() {
               </select>
               {errors.gender && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your Date of Birth.
+                  Nhập ngày sinh của bạn
                 </span>
               )}
             </div>
@@ -174,7 +174,7 @@ export default function EditProfile() {
               />
               {errors.about && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your About.
+                  Nhập thêm thông tin về bạn
                 </span>
               )}
             </div>
