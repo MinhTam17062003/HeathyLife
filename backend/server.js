@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
-
+const nodemailer = require('nodemailer'); // Only import it once
 // packages
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 // connection to DB and cloudinary
@@ -17,16 +16,12 @@ const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
 const paymentRoutes = require('./routes/payments');
 const courseRoutes = require('./routes/course');
-const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-
-
 
 // Sử dụng body-parser để phân tích JSON request
 app.use(bodyParser.json());
 
 // Tạo transporter với thông tin tài khoản email của bạn
-
 
 // middleware 
 app.use(express.json()); // to parse JSON body
@@ -92,7 +87,6 @@ app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1/profile', profileRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/v1/course', courseRoutes);
-app.use('/api/v1/contact', contactRoutes);
 
 // Default Route
 app.get('/', (req, res) => {

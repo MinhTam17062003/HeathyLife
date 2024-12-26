@@ -17,12 +17,12 @@ const ContactUsForm = () => {
   // Hàm gửi dữ liệu form
   const submitContactForm = async (data) => {
     console.log("Dữ liệu gửi từ frontend:", data); // Kiểm tra xem dữ liệu có đầy đủ không
+
     try {
       setLoading(true);
-<<<<<<< HEAD
-      setError("");
-      setSuccess(false);
-  
+      setError(""); // Xóa lỗi cũ nếu có
+      setSuccess(false); // Reset trạng thái thành công
+
       const response = await fetch("http://localhost:5001/api/v1/contact", {
         method: "POST",
         headers: {
@@ -30,39 +30,25 @@ const ContactUsForm = () => {
         },
         body: JSON.stringify(data), // Gửi dữ liệu dạng JSON
       });
-  
+
       if (!response.ok) {
         const errorResponse = await response.json();
         throw new Error(`Lỗi từ server: ${errorResponse.error || response.statusText}`);
       }
-  
+
       const result = await response.json();
       console.log("Form submitted successfully:", result);
-      setSuccess(true);
+      setSuccess(true); // Đặt trạng thái thành công
       alert("Email đã được gửi thành công!");
       reset(); // Reset các trường trong form
     } catch (error) {
       console.error("Thông tin lỗi:", error);
-      setError(error.message);
+      setError(error.message); // Hiển thị lỗi cho người dùng
       alert(`Lỗi gửi email: ${error.message}`);
     } finally {
       setLoading(false); // Tắt trạng thái loading
-=======
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) throw new Error("Failed to send contact form");
-      console.log("Form submitted successfully!");
-    } catch (error) {
-      console.error("Error: ", error.message);
-    } finally {
-      setLoading(false);
->>>>>>> e84fd777d59e83c536432462b51618800e80b154
     }
   };
-  
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -79,12 +65,14 @@ const ContactUsForm = () => {
 
   return (
     <form className="flex flex-col gap-7" onSubmit={handleSubmit(submitContactForm)}>
+      {/* Hiển thị lỗi nếu có */}
       {error && (
         <div className="p-3 text-red-500 bg-red-50 rounded-md">
           {error}
         </div>
       )}
 
+      {/* Hiển thị thông báo thành công nếu có */}
       {success && (
         <div className="p-3 text-green-500 bg-green-50 rounded-md">
           Email đã được gửi thành công!
@@ -131,11 +119,7 @@ const ContactUsForm = () => {
         <input
           type="email"
           id="email"
-<<<<<<< HEAD
           placeholder="Nhập địa chỉ email"
-=======
-          placeholder="Enter email address"
->>>>>>> e84fd777d59e83c536432462b51618800e80b154
           className="form-style focus:ring-2 focus:ring-teal-500 placeholder-gray-400"
           {...register("email", { required: "Vui lòng nhập email." })}
         />
