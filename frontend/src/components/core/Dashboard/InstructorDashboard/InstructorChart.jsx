@@ -48,8 +48,8 @@ export default function InstructorChart({ courses }) {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-y-4 rounded-md bg-richblack-800 p-6">
-      <p className="text-lg font-bold text-richblack-5">Visualize</p>
+    <div className="flex flex-1 flex-col gap-y-4 rounded-md bg-[#FFFFFF] p-6">
+      <p className="text-lg font-bold text-[#333333]">Hình dung</p>
 
       <div className="space-x-4 font-semibold">
         {/* Button to switch to the "students" chart */}

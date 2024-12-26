@@ -32,8 +32,8 @@ function Course_Card({ course, Height }) {
             />
           </div>
           <div className="flex flex-col gap-2 px-1 py-3">
-            <p className="text-xl text-[#333333]">{course?.courseName}</p>
-            <p className="text-sm text-[#333333]">
+            <p className="text-xl text-green-300">{course?.courseName}</p>
+            <p className="text-sm text-green-300">
               {course?.instructor?.firstName} {course?.instructor?.lastName}
             </p>
             <div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ function Course_Card({ course, Height }) {
                 fullIcon={<FaStar />}
               /> */}
               <RatingStars Review_Count={avgReviewCount} />
-              <span className="text-[#333333]">
+              <span className="text-yellow-100">
                 {course?.ratingAndReviews?.length} Ratings
               </span>
             </div>

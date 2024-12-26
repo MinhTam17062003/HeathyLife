@@ -146,21 +146,21 @@ export default function CourseInformationForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6 "
+      className="space-y-8 rounded-md bg-[#FFFFFF] p-6"
     >
       {/* Course Title */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseTitle">
-          Tên khóa học <sup className="text-pink-200">*</sup>
+        <label className="text-sm text-[#0D1B2A]" htmlFor="courseTitle">
+          Tên khóa học <sup className="text-[#AA0D0D]">*</sup>
         </label>
         <input
           id="courseTitle"
           placeholder="Nhập tên khóa học"
           {...register("courseTitle", { required: true })}
-          className="form-style w-full"
+          className="form-style w-full text-[#0D1B2A] placeholder:text-[#4A4A4A]"
         />
         {errors.courseTitle && (
-          <span className="ml-2 text-xs tracking-wide text-pink-200">
+          <span className="ml-2 text-xs tracking-wide text-[#AA0D0D]">
             Vui lòng nhập tên khóa học
           </span>
         )}
@@ -168,17 +168,17 @@ export default function CourseInformationForm() {
 
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
-          Mô tả khóa học <sup className="text-pink-200">*</sup>
+        <label className="text-sm text-[#0D1B2A]" htmlFor="courseShortDesc">
+          Mô tả khóa học <sup className="text-[#AA0D0D]">*</sup>
         </label>
         <textarea
           id="courseShortDesc"
           placeholder="Nhập mô tả khóa học"
           {...register("courseShortDesc", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full ] "
+          className="form-style resize-x-none min-h-[130px] w-full text-[#0D1B2A] placeholder:text-[#4A4A4A]"
         />
         {errors.courseShortDesc && (
-          <span className="ml-2 text-xs tracking-wide text-pink-200">
+          <span className="ml-2 text-xs tracking-wide text-[#AA0D0D]">
             Vui lòng nhập thông tin khóa học
           </span>
         )}
@@ -186,8 +186,8 @@ export default function CourseInformationForm() {
 
       {/* Course Price */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="coursePrice">
-          Giá <sup className="text-pink-200">*</sup>
+        <label className="text-sm text-[#0D1B2A]" htmlFor="coursePrice">
+          Giá <sup className="text-[#AA0D0D]">*</sup>
         </label>
         <div className="relative">
           <input
@@ -200,28 +200,27 @@ export default function CourseInformationForm() {
                 value: /^(0|[1-9]\d*)(\.\d+)?$/,
               },
             })}
-            className="form-style w-full !pl-12"
-
+            className="form-style w-full !pl-12 text-[#0D1B2A] placeholder:text-[#4A4A4A]"
           />
-          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-400" />
+          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-[#4A4A4A]" />
         </div>
         {errors.coursePrice && (
-          <span className="ml-2 text-xs tracking-wide text-pink-200">
-            Vui lòng nhập giá tiền 
+          <span className="ml-2 text-xs tracking-wide text-[#AA0D0D]">
+            Vui lòng nhập giá tiền
           </span>
         )}
       </div>
 
       {/* Course Category */}
-      <div className="flex flex-col space-y-2 ">
-        <label className="text-sm text-richblack-5" htmlFor="courseCategory">
-          Loại khóa học <sup className="text-pink-200">*</sup>
+      <div className="flex flex-col space-y-2">
+        <label className="text-sm text-[#0D1B2A]" htmlFor="courseCategory">
+          Loại khóa học <sup className="text-[#AA0D0D]">*</sup>
         </label>
         <select
           {...register("courseCategory", { required: true })}
           defaultValue=""
           id="courseCategory"
-          className="form-style w-full cursor-pointer"
+          className="form-style w-full cursor-pointer text-[#0D1B2A] placeholder:text-[#4A4A4A]"
         >
           <option value="" disabled>
             Chọn loại khóa học phù hợp
@@ -234,8 +233,8 @@ export default function CourseInformationForm() {
             ))}
         </select>
         {errors.courseCategory && (
-          <span className="ml-2 text-xs tracking-wide text-pink-200">
-            Vui lòng chọn một loại khóa học 
+          <span className="ml-2 text-xs tracking-wide text-[#AA0D0D]">
+            Vui lòng chọn một loại khóa học
           </span>
         )}
       </div>
@@ -262,18 +261,18 @@ export default function CourseInformationForm() {
 
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseBenefits">
-          Lợi ích của khóa học <sup className="text-pink-200">*</sup>
+        <label className="text-sm text-[#0D1B2A]" htmlFor="courseBenefits">
+          Lợi ích của khóa học <sup className="text-[#AA0D0D]">*</sup>
         </label>
         <textarea
           id="courseBenefits"
-          placeholder="Enter benefits of the course"
+          placeholder="Nhập lợi ích của khóa học"
           {...register("courseBenefits", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full"
+          className="form-style resize-x-none min-h-[130px] w-full text-[#0D1B2A] placeholder:text-[#4A4A4A]"
         />
         {errors.courseBenefits && (
-          <span className="ml-2 text-xs tracking-wide text-pink-200">
-            không để trống mô tả
+          <span className="ml-2 text-xs tracking-wide text-[#AA0D0D]">
+            Không để trống lợi ích
           </span>
         )}
       </div>
@@ -301,7 +300,7 @@ export default function CourseInformationForm() {
         )}
         <IconBtn
           disabled={loading}
-          text={!editCourse ? "Next" : "Save Changes"}
+          text={!editCourse ? "Tiếp tục" : "Lưu thay đổi"}
         >
           <MdNavigateNext />
         </IconBtn>

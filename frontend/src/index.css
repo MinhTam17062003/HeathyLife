@@ -88,8 +88,8 @@ body {
 
 
 /* Buttons */
-.yellowButton {
-  @apply cursor-pointer rounded-md bg-yellow-50 px-[20px] py-[8px] font-semibold text-richblack-900 hover:bg-black hover:text-yellow-50 duration-300;
+.greenButton {
+  @apply cursor-pointer rounded-md bg-[#6ADB8F] px-[20px] py-[8px] font-semibold text-white hover:bg-[#58C37A] duration-300;
 }
 
 .blackButton {

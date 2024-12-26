@@ -64,8 +64,8 @@ export default function PublishCourse() {
   }
 
   return (
-    <div className="rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">
+    <div className="rounded-md bg-[#FFFFFF] p-6">
+      <p className="text-2xl font-semibold text-black">
         Cài đặt đăng bài
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
