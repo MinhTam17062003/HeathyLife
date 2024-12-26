@@ -19,6 +19,7 @@ const ContactUsForm = () => {
     console.log("Dữ liệu gửi từ frontend:", data); // Kiểm tra xem dữ liệu có đầy đủ không
     try {
       setLoading(true);
+<<<<<<< HEAD
       setError("");
       setSuccess(false);
   
@@ -46,8 +47,22 @@ const ContactUsForm = () => {
       alert(`Lỗi gửi email: ${error.message}`);
     } finally {
       setLoading(false); // Tắt trạng thái loading
+=======
+      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Failed to send contact form");
+      console.log("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error: ", error.message);
+    } finally {
+      setLoading(false);
+>>>>>>> e84fd777d59e83c536432462b51618800e80b154
     }
   };
+  
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -116,7 +131,11 @@ const ContactUsForm = () => {
         <input
           type="email"
           id="email"
+<<<<<<< HEAD
           placeholder="Nhập địa chỉ email"
+=======
+          placeholder="Enter email address"
+>>>>>>> e84fd777d59e83c536432462b51618800e80b154
           className="form-style focus:ring-2 focus:ring-teal-500 placeholder-gray-400"
           {...register("email", { required: "Vui lòng nhập email." })}
         />
@@ -180,7 +199,7 @@ const ContactUsForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className={`rounded-md bg-[#40E0D0] px-6 py-3 text-center font-bold text-black hover:scale-95 
+        className={`rounded-md bg-green-300 px-6 py-3 text-center font-bold text-black hover:scale-95 
           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed`}
       >
         {loading ? "Đang gửi..." : "Phản hồi"}

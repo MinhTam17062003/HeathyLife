@@ -66,11 +66,11 @@ export default function CourseBuilderForm() {
   // go To Next
   const goToNext = () => {
     if (course.courseContent.length === 0) {
-      toast.error("Vui lòng thêm ít nhất một phần")
+      toast.error("Please add atleast one section")
       return;
     }
     if (course.courseContent.some((section) => section.subSection.length === 0)) {
-      toast.error("Vui lòng thêm ít nhất một bài giảng vào mỗi phần")
+      toast.error("Please add atleast one lecture in each section")
       return;
     }
 
@@ -97,13 +97,13 @@ export default function CourseBuilderForm() {
           <input
             id="sectionName"
             disabled={loading}
-            placeholder="Thêm bài học"
+            placeholder="Nhập bài học vào khóa học của bạn"
             {...register("sectionName", { required: true })}
             className="form-style w-full"
           />
           {errors.sectionName && (
             <span className="ml-2 text-xs tracking-wide text-pink-200">
-              Tên khóa học gợi ý
+              Yêu cầu nhập bài học
             </span>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function CourseBuilderForm() {
           <IconBtn
             type="submit"
             disabled={loading}
-            text={editSectionName ? "Chỉnh bài học" : "Tạo bài học"}
+            text={editSectionName ? "Edit Section Name" : "Tạo bài học"}
             outline={true}
           >
             <IoAddCircleOutline size={20} className="text-yellow-50" />
@@ -146,7 +146,7 @@ export default function CourseBuilderForm() {
         </button>
 
         {/* Next button */}
-        <IconBtn disabled={loading} text="Next" onclick={goToNext}>
+        <IconBtn disabled={loading} text="Bước kế tiếp" onclick={goToNext}>
           <MdNavigateNext />
         </IconBtn>
       </div>

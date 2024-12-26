@@ -73,7 +73,7 @@ export default function ChangeProfilePicture() {
           />
 
           <div className="space-y-2">
-            <p className="font-medium">Thay đổi ảnh</p>
+            <p className="font-medium">Thay đổi ảnh đại diện</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="file"

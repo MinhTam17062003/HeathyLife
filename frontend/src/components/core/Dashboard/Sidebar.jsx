@@ -94,8 +94,8 @@ export default function Sidebar() {
             <button
               onClick={() =>
                 setConfirmationModal({
-                  text1: "Bạn có chắc muốn đăng xuất ?",
-                  text2: "Bạn sẽ thoát khỏi tài khoản này.",
+                  text1: "Are you sure ?",
+                  text2: "You will be logged out of your account.",
                   btn1Text: "Đăng xuất",
                   btn2Text: "Hủy",
                   btn1Handler: () => dispatch(logout(navigate)),
@@ -106,7 +106,7 @@ export default function Sidebar() {
             >
               <div className="flex items-center gap-x-2 px-8 py-2 text-sm font-medium text-richblack-300 hover:bg-richblack-700 relative">
                 <VscSignOut className="text-lg" />
-                <span>Đăng xuất</span>
+                <span>Đăng Xuất</span>
               </div>
             </button>
 

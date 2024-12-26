@@ -1,27 +1,29 @@
 export const FooterLink2 = [
   {
-    title: "Liên hệ",
+    title: "Các phong cách Yoga",
     links: [
-      { title: "Trang chủ", link: "/al" },
-      { title: "Khóa học", link: "/" },
-      { title: "Về chúng tôi", link: "/" },
-      { title: "Công cụ tính BMI", link: "/" }
+      { title: "Hatha Yoga", link: "/hatha-yoga" },
+      { title: "Vinyasa Yoga", link: "/vinyasa-yoga" },
+      { title: "Ashtanga Yoga", link: "/ashtanga-yoga" },
+      { title: "Iyengar Yoga", link: "/iyengar-yoga" },
     ],
   },
   {
-    title: "Đôi nét về chúng tôi",
+    title: "Yoga cho từng cấp độ",
     links: [
-      { title: "Minh Tâm", link: "/" },
-      { title: "Tâm Tâm", link: "/" },
+      { title: "Yoga cho người mới bắt đầu", link: "/yoga-cho-nguoi-moi-bat-dau" },
+      { title: "Yoga trung cấp", link: "/yoga-trung-cap" },
+      { title: "Yoga nâng cao", link: "/yoga-nang-cao" },
+      { title: "Yoga cho người cao tuổi", link: "/yoga-cho-nguoi-cao-tuoi" },
     ],
   },
   {
-    title: "Chăm sóc khách hàng",
+    title: "Tài nguyên Yoga",
     links: [
-      { title: "Trang chủ", link: "/al" },
-      { title: "Khóa học", link: "/" },
-      { title: "Về chúng tôi", link: "/" },
-      { title: "Công cụ tính BMI", link: "/" }
-    ]
-  }
+      { title: "Mẹo thiền định", link: "/meo-thien-dinh" },
+      { title: "Các khóa Yoga tại trung tâm", link: "/khoa-yoga-tai-trung-tam" },
+      { title: "Chế độ ăn lành mạnh cho người tập Yoga", link: "/che-do-an-lanh-manh-cho-nguoi-tap-yoga" },
+      { title: "Hướng dẫn dụng cụ tập Yoga", link: "/huong-dan-dung-cu-tap-yoga" },
+    ],
+  },
 ];

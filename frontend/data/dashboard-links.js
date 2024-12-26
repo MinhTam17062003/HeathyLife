@@ -3,20 +3,20 @@ import { ACCOUNT_TYPE } from './../src/utils/constants';
 export const sidebarLinks = [
   {
     id: 1,
-    name: "Hồ sơ của tôi",
+    name: "Hồ sở của tôi",
     path: "/dashboard/my-profile",
     icon: "VscAccount",
   },
   {
     id: 2,
-    name: "Dashboard",
+    name: "Thông tin của tôi",
     path: "/dashboard/instructor",
     type: ACCOUNT_TYPE.INSTRUCTOR,
     icon: "VscDashboard",
   },
   {
     id: 3,
-    name: "Khóa học",
+    name: "khóa học của bạn",
     path: "/dashboard/my-courses",
     type: ACCOUNT_TYPE.INSTRUCTOR,
     icon: "VscVm",
@@ -30,14 +30,14 @@ export const sidebarLinks = [
   },
   {
     id: 5,
-    name: "Lỗi",
+    name: "Khóa học của bạn",
     path: "/dashboard/enrolled-courses",
     type: ACCOUNT_TYPE.STUDENT,
     icon: "VscMortarBoard",
   },
   {
     id: 6,
-    name: "Lịch sử đăng tải",
+    name: "Lịch sử mua hàng",
     path: "/dashboard/purchase-history",
     type: ACCOUNT_TYPE.STUDENT,
     icon: "VscHistory",

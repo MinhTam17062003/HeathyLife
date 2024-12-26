@@ -29,7 +29,7 @@ export default function EditProfile() {
         {/* Profile Information */}
         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-6 sm:px-12">
           <h2 className="text-lg font-semibold text-richblack-5">
-            Thông tin hồ sơ
+            Thông tin người dùng
           </h2>
 
           <div className="flex flex-col gap-5 lg:flex-row">
@@ -41,14 +41,14 @@ export default function EditProfile() {
                 type="text"
                 name="firstName"
                 id="firstName"
-                placeholder="Nhập tên"
+                placeholder="Tên"
                 className="form-style"
                 {...register("firstName", { required: true })}
                 defaultValue={user?.firstName}
               />
               {errors.firstName && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Vui lòng Nhập tên của bạn
+                  Vui lòng nhập tên của bạn
                 </span>
               )}
             </div>
@@ -68,7 +68,7 @@ export default function EditProfile() {
               />
               {errors.lastName && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Vui lòng nhập họ của bạn
+                  Vui lòng nhập vào học của bạn
                 </span>
               )}
             </div>
@@ -77,7 +77,7 @@ export default function EditProfile() {
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="dateOfBirth" className="lable-style">
-                Ngày sinh nhật
+                Ngày sinh
               </label>
               <input
                 type="date"
@@ -87,11 +87,11 @@ export default function EditProfile() {
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
-                    message: "Ngày sinh nhật.",
+                    message: "Nhập ngày sinh của bạn",
                   },
                   max: {
                     value: new Date().toISOString().split("T")[0],
-                    message: "Ngày sinh không hợp lệ.",
+                    message: "Date of Birth cannot be in the future.",
                   },
                 })}
                 defaultValue={user?.additionalDetails?.dateOfBirth}
@@ -105,11 +105,11 @@ export default function EditProfile() {
 
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="giới tính" className="lable-style">
-                Gender
+                Giới tính
               </label>
               <select
                 type="text"
-                name="giới tính"
+                name="gender"
                 id="gender"
                 className="form-style"
                 {...register("gender", { required: true })}
@@ -125,7 +125,7 @@ export default function EditProfile() {
               </select>
               {errors.gender && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Vui lòng nhập đúng ngày sinh 
+                  Nhập ngày sinh của bạn
                 </span>
               )}
             </div>
@@ -134,13 +134,13 @@ export default function EditProfile() {
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="contactNumber" className="lable-style">
-                Contact Number
+                Số điện thoại liên lạc
               </label>
               <input
                 type="tel"
                 name="contactNumber"
                 id="contactNumber"
-                placeholder="Enter Contact Number"
+                placeholder="Nhập số điện thoại liên lạc"
                 className="form-style"
                 {...register("contactNumber", {
                   required: {
@@ -161,20 +161,20 @@ export default function EditProfile() {
 
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="about" className="lable-style">
-                About
+                Thông tin thêm về bản thân
               </label>
               <input
                 type="text"
                 name="about"
                 id="about"
-                placeholder="Enter Bio Details"
+                placeholder="Nhập thêm thông tin về bạn"
                 className="form-style"
                 {...register("about", { required: true })}
                 defaultValue={user?.additionalDetails?.about}
               />
               {errors.about && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Nhập thông thêm thông tin về bạn
+                  Nhập thêm thông tin về bạn
                 </span>
               )}
             </div>
@@ -186,9 +186,9 @@ export default function EditProfile() {
             onClick={() => { navigate("/dashboard/my-profile") }}
             className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
           >
-            Hũy
+            Hủy
           </button>
-          <IconBtn type="submit" text="Save" />
+          <IconBtn type="submit" text="Lưu" />
         </div>
 
       </form>

@@ -111,7 +111,7 @@ export default function CourseReviewModal({ setReviewModal }) {
                 className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold
                            text-richblack-900 hover:bg-richblack-900 hover:text-richblack-300 duration-300`}
               >
-                Cancel
+                HỦy
               </button>
               <IconBtn text="Save" />
             </div>

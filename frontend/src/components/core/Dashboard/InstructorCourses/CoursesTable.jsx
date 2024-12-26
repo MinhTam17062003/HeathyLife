@@ -99,7 +99,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
           {!loading && courses?.length === 0 ? (
             <Tr>
               <Td className="py-10 text-center text-2xl font-medium text-richblack-100">
-                No courses found
+                Không tìm thấy khóa học của bạn
               </Td>
             </Tr>
           )
@@ -142,14 +142,14 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                       {course.status === COURSE_STATUS.DRAFT ? (
                         <p className="mt-2 flex w-fit flex-row items-center gap-2 rounded-full bg-richblack-700 px-2 py-[2px] text-[12px] font-medium text-pink-100">
                           <HiClock size={14} />
-                          Soạn thảo
+                          Drafted
                         </p>)
                         :
                         (<div className="mt-2 flex w-fit flex-row items-center gap-2 rounded-full bg-richblack-700 px-2 py-[2px] text-[12px] font-medium text-yellow-100">
                           <p className="flex h-3 w-3 items-center justify-center rounded-full bg-yellow-100 text-richblack-700">
                             <FaCheck size={8} />
                           </p>
-                          Đã Đăng
+                          Published
                         </div>
                         )}
                     </div>
@@ -179,7 +179,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                           text2:
                             "All the data related to this course will be deleted",
                           btn1Text: !loading ? "Delete" : "Loading...  ",
-                          btn2Text: "Cancel",
+                          btn2Text: "Hủy",
                           btn1Handler: !loading
                             ? () => handleCourseDelete(course._id)
                             : () => { },

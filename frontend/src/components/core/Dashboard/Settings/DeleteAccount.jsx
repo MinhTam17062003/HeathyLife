@@ -25,13 +25,13 @@ export default function DeleteAccount() {
         </div>
 
         <div className="flex flex-col ">
-          <h2 className="text-lg font-semibold text-richblack-5 "> Delete Account</h2>
+          <h2 className="text-lg font-semibold text-richblack-5 ">Xóa tài khoản</h2>
 
           <div className="sm:w-3/5 text-pink-25 flex flex-col gap-3 mt-1">
-            <p>Would you like to delete account ?</p>
+            <p>Bạn có chắc chắn muốn xóa tài khoản này ?</p>
             <p>
-              This account may contain Paid Courses. Deleting your account is
-              permanent and will remove all the contain associated with it.
+              Tài khoản này có thể chứa các Khóa học trả phí. 
+              Việc xóa tài khoản của bạn là vĩnh viễn và sẽ xóa mọi nội dung liên quan đến tài khoản.
             </p>
           </div>
 
@@ -51,14 +51,14 @@ export default function DeleteAccount() {
                 setConfirmationModal({
                   text1: "Are you sure ?",
                   text2: "Delete my account...!",
-                  btn1Text: "Delete",
-                  btn2Text: "Cancel",
+                  btn1Text: "Xóa",
+                  btn2Text: "Hủy",
                   btn1Handler: () => dispatch(deleteProfile(token, navigate)),
                   btn2Handler: () => { setConfirmationModal(null); setCheck(false) },
                 })
               }
             >
-              I want to delete my account.
+              Tôi chắc chắn và đồng ý xóa tài khoản
             </button>
           </div>
 

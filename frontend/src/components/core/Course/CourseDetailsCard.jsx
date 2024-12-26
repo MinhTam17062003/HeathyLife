@@ -12,6 +12,7 @@ import { ACCOUNT_TYPE } from "../../../utils/constants"
 import Img from './../../common/Img';
 
 
+// eslint-disable-next-line react/prop-types
 function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   const { user } = useSelector((state) => state.profile)
   const { token } = useSelector((state) => state.auth)
@@ -42,7 +43,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
       text1: "You are not logged in!",
       text2: "Please login to add To Cart",
       btn1Text: "Login",
-      btn2Text: "Cancel",
+      btn2Text: "Thoát",
       btn1Handler: () => navigate("/login"),
       btn2Handler: () => setConfirmationModal(null),
     })
