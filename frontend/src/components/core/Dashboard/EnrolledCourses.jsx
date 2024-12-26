@@ -53,7 +53,7 @@ export default function EnrolledCourses() {
   if (enrolledCourses?.length == 0) {
     return (
       <p className="grid h-[50vh] w-full place-content-center text-center text-richblack-5 text-3xl">
-        You have not enrolled in any course yet.
+        Bạn chưa mua khóa học nào cả
       </p>)
   }
 

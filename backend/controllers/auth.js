@@ -268,7 +268,7 @@ exports.changePassword = async (req, res) => {
         // if old password not match 
         if (!isPasswordMatch) {
             return res.status(401).json({
-                success: false, message: "Old password is Incorrect"
+                success: false, message: "Vui lòng nhập đúng mật khẩu ban đầu"
             });
         }
 
@@ -276,7 +276,7 @@ exports.changePassword = async (req, res) => {
         if (newPassword !== confirmNewPassword) {
             return res.status(403).json({
                 success: false,
-                message: 'The password and confirm password do not match'
+                message: 'Mật khẩu nhập lại không chính xác'
             })
         }
 

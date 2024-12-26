@@ -147,7 +147,7 @@ function CourseDetails() {
       text1: "You are not logged in!",
       text2: "Please login to Purchase Course.",
       btn1Text: "Login",
-      btn2Text: "Cancel",
+      btn2Text: "Hủy",
       btn1Handler: () => navigate("/login"),
       btn2Handler: () => setConfirmationModal(null),
     })
@@ -166,8 +166,8 @@ function CourseDetails() {
     setConfirmationModal({
       text1: "You are not logged in!",
       text2: "Please login to add To Cart",
-      btn1Text: "Login",
-      btn2Text: "Cancel",
+      btn1Text: "Đăng nhập",
+      btn2Text: "Hủy",
       btn1Handler: () => navigate("/login"),
       btn2Handler: () => setConfirmationModal(null),
     })
