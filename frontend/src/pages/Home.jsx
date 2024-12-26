@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 // Components
-import HighlightText from '../components/core/HomePage/HighlightText'
-import CTAButton from "../components/core/HomePage/Button"
-import TimelineSection from '../components/core/HomePage/TimelineSection'
-import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
-import InstructorSection from '../components/core/HomePage/InstructorSection'
-import Footer from '../components/common/Footer'
-import ReviewSlider from '../components/common/ReviewSlider'
-import Course_Slider from '../components/core/Catalog/Course_Slider'
-import Loading from '../components/common/Loading'
+import HighlightText from '../components/core/HomePage/HighlightText';
+import CTAButton from "../components/core/HomePage/Button";
+import TimelineSection from '../components/core/HomePage/TimelineSection';
+import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
+import InstructorSection from '../components/core/HomePage/InstructorSection';
+import Footer from '../components/common/Footer';
+import ReviewSlider from '../components/common/ReviewSlider';
+import Course_Slider from '../components/core/Catalog/Course_Slider';
+import Loading from '../components/common/Loading';
 
 // API
-import { fetchCourseCategories } from '../services/operations/courseDetailsAPI'
-import { getCatalogPageData } from '../services/operations/pageAndComponentData'
+import { fetchCourseCategories } from '../services/operations/courseDetailsAPI';
+import { getCatalogPageData } from '../services/operations/pageAndComponentData';
 
 // Icons
-import { FaArrowRight } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa";
 
 // Animations
-import { fadeIn } from '../components/common/motionFrameVarients'
+import { fadeIn } from '../components/common/motionFrameVarients';
 
 // Background Images
-import backgroundImg1 from '../assets/Images/random bg img/carousel1.jpg'
-import backgroundImg2 from '../assets/Images/random bg img/carousel4.jpg'
-import backgroundImg3 from '../assets/Images/random bg img/carousel3.jpg'
+import backgroundImg1 from '../assets/Images/random bg img/carousel1.jpg';
+import backgroundImg2 from '../assets/Images/random bg img/carousel4.jpg';
+import backgroundImg3 from '../assets/Images/random bg img/carousel3.jpg';
 
 const randomImges = [backgroundImg1, backgroundImg2, backgroundImg3];
 
@@ -41,44 +41,49 @@ const Home = () => {
 
     // Set random background image
     useEffect(() => {
-        const bg = randomImges[Math.floor(Math.random() * randomImges.length)]
-        setBackgroundImg(bg);
-    }, [])
+        if (randomImges.length > 0) {
+            const bg = randomImges[Math.floor(Math.random() * randomImges.length)];
+            setBackgroundImg(bg);
+        }
+    }, []);
 
     // Fetch all course data
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                // First fetch all categories
+                // Fetch categories
                 const categoriesResult = await fetchCourseCategories();
+                if (!categoriesResult || categoriesResult.length === 0) {
+                    throw new Error("Không tìm thấy danh mục khóa học.");
+                }
                 setCategories(categoriesResult);
 
-                // Then fetch data for each category
+                // Fetch data for each category
                 const allCategoriesData = await Promise.all(
                     categoriesResult.map(async (category) => {
                         const result = await getCatalogPageData(category._id, dispatch);
-                        return result;
+                        return result || {};
                     })
                 );
 
                 // Combine all data
                 const combinedData = {
                     selectedCategory: {
-                        courses: allCategoriesData.flatMap(data => 
+                        courses: allCategoriesData.flatMap(data =>
                             data.selectedCategory?.courses || []
-                        )
+                        ),
                     },
-                    mostSellingCourses: allCategoriesData.flatMap(data => 
+                    mostSellingCourses: allCategoriesData.flatMap(data =>
                         data.mostSellingCourses || []
-                    )
+                    ),
                 };
 
                 setCatalogPageData(combinedData);
                 setError(null);
             } catch (err) {
                 console.error("Error fetching data:", err);
-                setError("Không thể tải dữ liệu khóa học. Vui lòng thử lại sau.");
+                setError(err.message || "Lỗi không xác định.");
             } finally {
                 setIsLoading(false);
             }
@@ -108,7 +113,7 @@ const Home = () => {
             {/* Background Image */}
             <div>
                 <div className="w-full h-[450px] md:h-[650px] absolute top-0 left-0 overflow-hidden object-cover">
-                    <img src={backgroundImg} alt="Background" className="w-full h-full object-cover"/>
+                    <img src={backgroundImg} alt="Background" className="w-full h-full object-cover" />
                     <div className="absolute left-0 bottom-0 w-full h-[250px] opacity_layer_bg"></div>
                 </div>
             </div>
@@ -143,11 +148,10 @@ const Home = () => {
                         initial='hidden'
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.1 }}
-                        className='mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-400'
+                        className='mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-[#00FFCC]'
                     >
                         Tham gia khóa học Yoga trực tuyến để cải thiện sức khỏe, giảm căng thẳng, 
-                        và tìm lại sự cân bằng trong cuộc sống, với các bài học dễ dàng theo dõi
-                        và hỗ trợ từ các chuyên gia hàng đầu.
+                        và tìm lại sự cân bằng trong cuộc sống.
                     </motion.div>
 
                     <div className='flex flex-row gap-7 mt-8'>
@@ -163,28 +167,30 @@ const Home = () => {
                 {/* Courses Sections */}
                 <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between'>
                     {/* All Courses Section */}
-                    {catalogPageData?.selectedCategory?.courses?.length > 0 && (
+                    {catalogPageData?.selectedCategory?.courses?.length > 0 ? (
                         <div className='mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent'>
-                            <h2 className='text-black mb-6 text-2xl'>
+                            <h2 className='text-black my-6 text-2xl' style={{ fontFamily: "'Pacifico', cursive" ,fontWeight: 'bold',fontSize: '1.5rem' }}>
                                 Tất cả khóa học
                             </h2>
                             <Course_Slider 
                                 Courses={catalogPageData.selectedCategory.courses} 
                             />
                         </div>
+                    ) : (
+                        <p className="text-center text-gray-500">Không có khóa học nào được tìm thấy.</p>
                     )}
 
                     {/* Most Popular Courses Section */}
-                    {catalogPageData?.mostSellingCourses?.length > 0 && (
+                    {catalogPageData?.mostSellingCourses?.length > 0 ? (
                         <div className='mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent'>
-                            <h2 className='text-black mb-6 text-2xl'>
+                            <h2 className='text-black mb-6 text-2xl' style={{ fontFamily: "'Pacifico', cursive" ,fontWeight: 'bold',fontSize: '1.5rem' }}>
                                 Khóa học phổ biến
                             </h2>
                             <Course_Slider 
                                 Courses={catalogPageData.mostSellingCourses} 
                             />
                         </div>
-                    )}
+                    ) : null}
                 </div>
 
                 {/* Benefits Section */}
@@ -215,13 +221,13 @@ const Home = () => {
                 {/* Instructors and Reviews Section */}
                 <div className='mt-14 w-11/12 mx-auto py-16 max-w-maxContent flex-col items-center justify-between gap-8 bg-[#ebfff7] text-white'>
                     <InstructorSection />
-                    <ReviewSlider />
+                    {/* <ReviewSlider /> */}
                 </div>
 
                 <Footer />
             </div>
         </React.Fragment>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

@@ -98,7 +98,7 @@ const BmiCalculator = () => {
             </div>
             <button
               onClick={handleCalculate}
-              className="w-full py-3 bg-green-50 text-white font-bold rounded-lg hover:bg-teal-700"
+              className="w-full py-3 bg-green-300 text-white font-bold rounded-lg hover:bg-teal-700"
             >
               Nhận Kết quả
             </button>

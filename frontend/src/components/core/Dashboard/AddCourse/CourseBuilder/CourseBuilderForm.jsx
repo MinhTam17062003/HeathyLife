@@ -86,24 +86,24 @@ export default function CourseBuilderForm() {
 
   return (
     <div className="space-y-8 rounded-2xl border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">Course Builder</p>
+      <p className="text-2xl font-semibold text-richblack-5">Xây dựng khóa học</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Section Name */}
         <div className="flex flex-col space-y-2">
           <label className="text-sm text-richblack-5" htmlFor="sectionName">
-            Section Name <sup className="text-pink-200">*</sup>
+            Tên bài học <sup className="text-pink-200">*</sup>
           </label>
           <input
             id="sectionName"
             disabled={loading}
-            placeholder="Add a section to build your course"
+            placeholder="Nhập bài học vào khóa học của bạn"
             {...register("sectionName", { required: true })}
             className="form-style w-full"
           />
           {errors.sectionName && (
             <span className="ml-2 text-xs tracking-wide text-pink-200">
-              Section name is required
+              Yêu cầu nhập bài học
             </span>
           )}
         </div>
@@ -113,7 +113,7 @@ export default function CourseBuilderForm() {
           <IconBtn
             type="submit"
             disabled={loading}
-            text={editSectionName ? "Edit Section Name" : "Create Section"}
+            text={editSectionName ? "Edit Section Name" : "Tạo bài học"}
             outline={true}
           >
             <IoAddCircleOutline size={20} className="text-yellow-50" />
@@ -125,7 +125,7 @@ export default function CourseBuilderForm() {
               onClick={cancelEdit}
               className="text-sm text-richblack-300 underline"
             >
-              Cancel Edit
+              Thoát chỉnh sửa
             </button>
           )}
         </div>
@@ -142,11 +142,11 @@ export default function CourseBuilderForm() {
           onClick={goBack}
           className={`rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
         >
-          Back
+          Trở về
         </button>
 
         {/* Next button */}
-        <IconBtn disabled={loading} text="Next" onclick={goToNext}>
+        <IconBtn disabled={loading} text="Bước kế tiếp" onclick={goToNext}>
           <MdNavigateNext />
         </IconBtn>
       </div>

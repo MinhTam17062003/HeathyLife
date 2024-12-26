@@ -87,7 +87,7 @@ exports.getCategoryPageDetails = async (req, res) => {
             return res.status(404).json({
                 success: false,
                 data: null,
-                message: "No courses found for the selected category.",
+                message: "Không tìm thấy thông tin khóa học.",
             });
         }
 

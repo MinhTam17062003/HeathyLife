@@ -56,7 +56,7 @@ const HeroSection = () => {
                         onMouseOver={(e) => (e.target.style.color = "#76c776")}
                         onMouseOut={(e) => (e.target.style.color = "#90EE90")}
                     >
-                        HeathyLife
+                        Heathy Lifestyle
                     </a>
                     .
                 </Typography>
@@ -97,7 +97,7 @@ const HeroSection = () => {
                                         backgroundColor: "#76c776",
                                     },
                                 }}
-                                onClick={() => navigate("/signup")}
+                                onClick={() => navigate("/about")}
                             >
                                 Tìm Hiểu Thêm
                             </Button>

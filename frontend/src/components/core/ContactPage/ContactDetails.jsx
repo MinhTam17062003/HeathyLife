@@ -19,7 +19,7 @@ const contactDetails = [
   },
   {
     icon: "IoCall",
-    heading: "Call us",
+    heading: "Liên hệ",
     description: "Thư 2 đến Thứ 7, từ 5h.am đến 9h.pm",
     details: "+52404207",
   },
