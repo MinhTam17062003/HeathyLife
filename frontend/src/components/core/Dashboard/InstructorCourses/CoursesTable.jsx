@@ -179,7 +179,7 @@ export default function CoursesTable({ courses, setCourses, loading, setLoading 
                           text2:
                             "All the data related to this course will be deleted",
                           btn1Text: !loading ? "Delete" : "Loading...  ",
-                          btn2Text: "Cancel",
+                          btn2Text: "Hủy",
                           btn1Handler: !loading
                             ? () => handleCourseDelete(course._id)
                             : () => { },

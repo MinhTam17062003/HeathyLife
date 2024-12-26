@@ -182,12 +182,12 @@ export default function Instructor() {
         ) : (
           <div className="mt-20 rounded-md bg-richblack-800 p-6 py-20">
             <p className="text-center text-2xl font-bold text-richblack-5">
-              You have not created any courses yet
+              Bạn chưa có khóa học nào của bạn 
             </p>
 
             <Link to="/dashboard/add-course">
               <p className="mt-1 text-center text-lg font-semibold text-yellow-50">
-                Create a course
+                Tạo khóa học
               </p>
             </Link>
           </div>

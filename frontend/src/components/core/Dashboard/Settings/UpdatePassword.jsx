@@ -34,20 +34,20 @@ export default function UpdatePassword() {
     <>
       <form onSubmit={handleSubmit(submitPasswordForm)}>
         <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-6 sm:px-12">
-          <h2 className="text-lg font-semibold text-richblack-5">Password</h2>
+          <h2 className="text-lg font-semibold text-richblack-5">Thay đổi mật khẩu </h2>
 
           <div className="flex flex-col gap-5 lg:flex-row">
           {/* Current Password */}
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="oldPassword" className="lable-style">
-                Current Password
+                Mật khẩu hiện tại
               </label>
 
               <input
                 type={showOldPassword ? "text" : "password"}
                 name="oldPassword"
                 id="oldPassword"
-                placeholder="Enter Current Password"
+                placeholder="Nhập mật khẩu hiện tại"
                 className="form-style"
                 {...register("oldPassword", { required: true })}
               />
@@ -65,7 +65,7 @@ export default function UpdatePassword() {
 
               {errors.oldPassword && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your Current Password.
+                  Vui lòng nhập mật khẩu hiện tại
                 </span>
               )}
             </div>
@@ -73,14 +73,14 @@ export default function UpdatePassword() {
             {/* new password */}
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="newPassword" className="lable-style">
-                New Password
+                Mật khẩu mới
               </label>
 
               <input
                 type={showNewPassword ? "text" : "password"}
                 name="newPassword"
                 id="newPassword"
-                placeholder="Enter New Password"
+                placeholder="Nhập mật khẩu mới"
                 className="form-style"
                 {...register("newPassword", { required: true })}
               />
@@ -97,7 +97,7 @@ export default function UpdatePassword() {
               </span>
               {errors.newPassword && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your New Password.
+                  Vui lòng nhập vào mật khẩu mới của bạn
                 </span>
               )}
             </div>
@@ -105,14 +105,14 @@ export default function UpdatePassword() {
             {/*confirm new password */}
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="confirmNewPassword" className="lable-style">
-                Confirm New Password
+                Xác nhận lại mật khẩu mới
               </label>
 
               <input
                 type={showConfirmNewPassword ? "text" : "password"}
                 name="confirmNewPassword"
                 id="confirmNewPassword"
-                placeholder="Enter Confirm New Password"
+                placeholder="Xác nhận mật khẩu"
                 className="form-style"
                 {...register("confirmNewPassword", { required: true })}
               />
@@ -129,7 +129,7 @@ export default function UpdatePassword() {
               </span>
               {errors.confirmNewPassword && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your Confirm New Password.
+                  Vui lòng nhập đúng mật khẩu
                 </span>
               )}
             </div>
@@ -142,9 +142,9 @@ export default function UpdatePassword() {
             onClick={() => { navigate("/dashboard/my-profile") }}
             className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
           >
-            Cancel
+            Hủy
           </button>
-          <IconBtn type="submit" text="Update" />
+          <IconBtn type="submit" text="Cập nhật" />
         </div>
 
       </form>

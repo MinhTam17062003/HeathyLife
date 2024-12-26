@@ -104,8 +104,8 @@ export default function EditProfile() {
             </div>
 
             <div className="flex flex-col gap-2 lg:w-[48%]">
-              <label htmlFor="gender" className="lable-style">
-                Gender
+              <label htmlFor="giới tính" className="lable-style">
+                Giới tính
               </label>
               <select
                 type="text"
@@ -134,13 +134,13 @@ export default function EditProfile() {
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="contactNumber" className="lable-style">
-                Contact Number
+                Số điện thoại liên lạc
               </label>
               <input
                 type="tel"
                 name="contactNumber"
                 id="contactNumber"
-                placeholder="Enter Contact Number"
+                placeholder="Nhập số điện thoại liên lạc"
                 className="form-style"
                 {...register("contactNumber", {
                   required: {
@@ -161,13 +161,13 @@ export default function EditProfile() {
 
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="about" className="lable-style">
-                About
+                Thông tin thêm về bản thân
               </label>
               <input
                 type="text"
                 name="about"
                 id="about"
-                placeholder="Enter Bio Details"
+                placeholder="Nhập thêm thông tin về bạn"
                 className="form-style"
                 {...register("about", { required: true })}
                 defaultValue={user?.additionalDetails?.about}
@@ -186,9 +186,9 @@ export default function EditProfile() {
             onClick={() => { navigate("/dashboard/my-profile") }}
             className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
           >
-            Cancel
+            Hủy
           </button>
-          <IconBtn type="submit" text="Save" />
+          <IconBtn type="submit" text="Lưu" />
         </div>
 
       </form>

@@ -88,8 +88,8 @@ export default function NestedView({ handleChangeEditSectionName }) {
                     setConfirmationModal({
                       text1: "Delete this Section?",
                       text2: "All the lectures in this section will be deleted",
-                      btn1Text: "Delete",
-                      btn2Text: "Cancel",
+                      btn1Text: "Xóa",
+                      btn2Text: "Hủy",
                       btn1Handler: () => handleDeleleSection(section._id),
                       btn2Handler: () => setConfirmationModal(null),
                     })
@@ -133,8 +133,8 @@ export default function NestedView({ handleChangeEditSectionName }) {
                         setConfirmationModal({
                           text1: "Delete this Sub-Section?",
                           text2: "This lecture will be deleted",
-                          btn1Text: "Delete",
-                          btn2Text: "Cancel",
+                          btn1Text: "Xóa",
+                          btn2Text: "Hủy",
                           btn1Handler: () =>
                             handleDeleteSubSection(data._id, section._id),
                           btn2Handler: () => setConfirmationModal(null),
